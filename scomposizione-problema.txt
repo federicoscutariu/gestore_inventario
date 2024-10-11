@@ -1,0 +1,17 @@
+Problema main: gestore di inventario in js
+
+Cosa deve avere:
+- sistema di aggiunta prodotti
+- sistema di rimozione prodotti
+- visualizzazione prodotti
+- modifica prodotti
+
+Aggiungere un prodotto:
+cosa chiedere:
+- nome
+- immagine
+- descrizione
+- quantità
+
+cosa non chiedere:
+- id
