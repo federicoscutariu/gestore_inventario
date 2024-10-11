@@ -26,28 +26,6 @@ function aggiungiProdotto() {
   let imgSrc = null;
   let id = prodotti.length;
 
-  if (
-    nome === "" ||
-    nome === null ||
-    descrizione === "" ||
-    descrizione === null ||
-    quant === "" ||
-    quant === null ||
-    quant / quant != 1 ||
-    !aggiungiImg.files ||
-    !aggiungiImg.files[0]
-  ) {
-    console.log(
-      nome,
-      descrizione,
-      quant,
-      aggiungiImg.files,
-      aggiungiImg.files[0]
-    );
-    alert("Devi compilare tutti i campi correttamente!");
-    return;
-  }
-
   imgSrc = URL.createObjectURL(aggiungiImg.files[0]);
 
   let prodottoCont = document.createElement("div");

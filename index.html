@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestore di inventario</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
 
-        input, textarea {
-            margin-bottom: 20px;
-        }
+      input,
+      textarea {
+        margin-bottom: 20px;
+      }
 
-        #aggiungi-nome, #aggiungi-quantità {
-            width: 200px;
-        }
+      .aggiungi-form {
+        display: flex;
+        flex-direction: column;
+      }
 
-        #aggiungi-descrizione {
-            width: 250px;
-            height: 50px;
-        }
+      #aggiungi-nome,
+      #aggiungi-quantità {
+        width: 200px;
+      }
 
-        .prodotti {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-        }
+      #aggiungi-descrizione {
+        width: 250px;
+        height: 50px;
+      }
 
-        .prodotto {
-            display: flex;
-            flex-direction: column;
-        }
+      .prodotti {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .prodotto {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Inventario</h1>
     <h2>Aggiungi prodotto</h2>
-    <input type="text" id="aggiungi-nome" name="nome-prodotto" placeholder="Inserisci il nome del prodotto...">
-    <textarea type="text" id="aggiungi-descrizione" placeholder="Inserisci la descrizione del prodotto..."></textarea>
-    <input type="number" name="quantità" id="aggiungi-quantità" placeholder="Inserisci la quantità...">
-    <input type="file" name="aggiungi-immagine" id="aggiungi-immagine" accept="image/*">
-    <label for="aggiungi"><button id="aggiungi-btn" onclick="aggiungiProdotto()">Aggiungi prodotto</button></label>
+    <form action="javascript:aggiungiProdotto()" class="aggiungi-form">
+      <input
+        type="text"
+        id="aggiungi-nome"
+        name="nome-prodotto"
+        placeholder="Inserisci il nome del prodotto..."
+        required
+      />
+      <textarea
+        type="text"
+        id="aggiungi-descrizione"
+        placeholder="Inserisci la descrizione del prodotto..."
+        required
+      ></textarea>
+      <input
+        type="number"
+        name="quantità"
+        id="aggiungi-quantità"
+        placeholder="Inserisci la quantità..."
+        min="1"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        required
+      />
+      <input
+        type="file"
+        name="aggiungi-immagine"
+        id="aggiungi-immagine"
+        accept="image/*"
+        required
+      />
+      <label for="aggiungi"
+        ><input type="submit" id="aggiungi-btn" value="Aggiungi prodotto"
+      /></label>
+    </form>
 
-    <div class="prodotti">
-        <!-- <div class="prodotto">
-            <img src="" alt="" width="50" height="50">
-            <span id="nome">f</span>
-            <span id="descrizione">f</span>
-            <span id="quantità">f</span>
-            <button id="rimuovi-btn">Rimuovi</button>
-        </div> -->
-    </div>
+    <div class="prodotti"></div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
