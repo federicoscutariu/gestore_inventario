@@ -18,13 +18,6 @@ let aggiungiQuant = document.getElementById("aggiungi-quantità");
 let aggiungiImg = document.getElementById("aggiungi-immagine");
 let aggiungiBtn = document.getElementById("aggiungi-btn");
 
-// Sezione Dettagli
-let dettagliNome = document.getElementById("dettagli-nome");
-let dettagliBtn = document.getElementById("dettagli-btn");
-
-// Sezione Visualizza tutti i prodotti
-let visualizzaTuttiBtn = document.getElementById("tutti-i-prodotti");
-
 // Funzioni
 function aggiungiProdotto() {
   let nome = aggiungiNome.value;
